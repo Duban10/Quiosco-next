@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+
+export const metadata: Metadata = {
+  title: "Quiosco Next.js con App Router y Prisma",
+  description: "Quiosco Next.js con App Router y Prisma",
+};
+
+const font = Inter({
+  subsets:['latin'],
+  weight: ['400', '700', '900']  
+})
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es">
+      <body
+        className={`${font.className} bg-gray-100 antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
